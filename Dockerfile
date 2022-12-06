@@ -1,1 +1,1 @@
-FROM adguard/adguardhome:lastest
+FROM baserow/baserow:lastest
