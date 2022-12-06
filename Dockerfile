@@ -1,1 +1,1 @@
-FROM adguard/adguardhome:lastest
+FROM adguard/adguardhome
