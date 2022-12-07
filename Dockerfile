@@ -1,1 +1,1 @@
-FROM archivebox/archivebox:master
+FROM huginn/huginn
