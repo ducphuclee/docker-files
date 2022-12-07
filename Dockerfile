@@ -1,1 +1,1 @@
-FROM adguard/adguardhome
+FROM archivebox/archivebox:master
