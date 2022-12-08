@@ -16,11 +16,11 @@ services:
     depends_on:
       - mongo
     environment:
-      - API_ENDPOINT=http://localhost:8080 # This MUST be included as a valid URL in the spotify dashboard
-      - CLIENT_ENDPOINT=http://localhost:3000
+      - API_ENDPOINT=https://api.spotify.coolify.ducphuclee.tech
+      - CLIENT_ENDPOINT=https://spotify.coolify.ducphuclee.tech
       - SPOTIFY_PUBLIC=__your_spotify_client_id__
       - SPOTIFY_SECRET=__your_spotify_secret__
-      - CORS=http://localhost:3000,http://localhost:3001
+      - CORS=http://localhost:3000,http://localhost:3001,https://api.spotify.coolify.ducphuclee.tech,https://spotify.coolify.ducphuclee.tech
       #- MONGO_ENDPOINT=mongodb://mongo:27017/your_spotify
 
   mongo:
