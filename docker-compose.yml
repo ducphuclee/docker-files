@@ -36,6 +36,6 @@ services:
       args:
         - NODE_ENV=production
     ports:
-      - "3335:3000"
+      - "3340:3000"
     environment:
       - API_ENDPOINT=http://localhost:8080
