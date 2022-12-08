@@ -18,8 +18,8 @@ services:
     environment:
       - API_ENDPOINT=https://api.spotify.coolify.ducphuclee.tech
       - CLIENT_ENDPOINT=https://spotify.coolify.ducphuclee.tech
-      - SPOTIFY_PUBLIC=__your_spotify_client_id__
-      - SPOTIFY_SECRET=__your_spotify_secret__
+      - SPOTIFY_PUBLIC=5aadd1264ced4cdd859fb9d0e8ca9c6a
+      - SPOTIFY_SECRET=fd25b170f8404749a9de7640d1b3fd4a
       - CORS=http://localhost:3000,http://localhost:3001,https://api.spotify.coolify.ducphuclee.tech,https://spotify.coolify.ducphuclee.tech
       #- MONGO_ENDPOINT=mongodb://mongo:27017/your_spotify
 
