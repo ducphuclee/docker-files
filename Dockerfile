@@ -1,1 +1,0 @@
-FROM yooooomi/your_spotify_server
