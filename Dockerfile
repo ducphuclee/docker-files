@@ -1,1 +1,1 @@
-FROM  freshrss/freshrss
+FROM  miniflux/miniflux
