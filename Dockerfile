@@ -1,1 +1,1 @@
-FROM rsprta/selfoss
+FROM livebook/livebook
