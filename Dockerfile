@@ -1,1 +1,1 @@
-FROM livebook/livebook
+FROM jupyter/datascience-notebook
