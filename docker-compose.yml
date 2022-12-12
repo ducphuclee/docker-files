@@ -2,7 +2,7 @@
 version: "3"
 services:
   calibre:
-    image: ghcr.io/linuxserver/calibre
+    image: linuxserver/calibre
     container_name: calibre
     environment:
       - PUID=1000
@@ -18,7 +18,7 @@ services:
 
 
   calibre-web:
-    image: ghcr.io/linuxserver/calibre-web
+    image: linuxserver/calibre-web
     container_name: calibre-web
     environment:
       - PUID=1000
