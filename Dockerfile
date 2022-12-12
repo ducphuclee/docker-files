@@ -1,1 +1,1 @@
-FROM vivumlab/vivumlab
+FROM pawelmalak/flame
