@@ -1,1 +1,1 @@
-FROM faldez/tanoshi
+FROM aaronleopold/stump
