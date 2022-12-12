@@ -1,1 +1,1 @@
-FROM aaronleopold/stump-preview
+FROM linuxserver/calibre-web
