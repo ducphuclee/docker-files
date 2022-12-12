@@ -1,1 +1,1 @@
-FROM pawelmalak/flame
+FROM rsprta/selfoss
