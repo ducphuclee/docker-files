@@ -1,24 +1,36 @@
-version: '2'
+---
+version: "3"
 services:
-  postgres:
-    image: postgres:9.5-alpine
-    restart: always
+  calibre:
+    image: ghcr.io/linuxserver/calibre
+    container_name: calibre
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+      - CLI_ARGS= "-auth-mode=basic" #optional
     volumes:
-      - ~/stringer:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_PASSWORD=super_secret_password
-      - POSTGRES_USER=db_user
-      - POSTGRES_DB=stringer
-
-  web:
-    image: mockdeep/stringer
-    build: .
-    depends_on:
-      - postgres
-    restart: always
+      - ./config:/config
     ports:
-      - 8088:8080
+      - 8282:8080 #DesktopGui
+      - 8283:8081 #WebserverGui
+    restart: unless-stopped
+
+
+  calibre-web:
+    image: ghcr.io/linuxserver/calibre-web
+    container_name: calibre-web
     environment:
-      - SECRET_TOKEN=YOUR_SECRET_TOKEN
-      - PORT=8080
-      - DATABASE_URL=postgres://db_user:super_secret_password@postgres:5432/stringer
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+      - DOCKER_MODS=linuxserver/calibre-web:calibre #optional
+      - OAUTHLIB_RELAX_TOKEN_SCOPE=1 #optional
+    volumes:
+      - ./web-config:/config
+      - ./config/Calibre Library:/books
+    ports:
+      - 8284:8083
+    restart: unless-stopped
+    depends_on: 
+      - calibre
