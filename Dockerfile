@@ -1,1 +1,1 @@
-FROM aaronleopold/stump
+FROM aaronleopold/stump-preview
