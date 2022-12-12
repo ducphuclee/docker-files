@@ -1,1 +1,1 @@
-FROM florider89/joplin-server
+FROM stashapp/stash
