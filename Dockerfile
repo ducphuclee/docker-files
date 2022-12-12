@@ -1,1 +1,1 @@
-FROM danielszabo99/microbin
+FROM joplin/server
