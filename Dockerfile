@@ -1,1 +1,1 @@
-FROM stashapp/stash
+FROM linuxserver/grocy
