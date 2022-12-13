@@ -1,1 +1,1 @@
-FROM linuxserver/grocy:3.3.1
+FROM n8nio/n8n
