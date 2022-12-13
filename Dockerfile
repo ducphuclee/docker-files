@@ -1,1 +1,1 @@
-FROM linuxserver/grocy
+FROM linuxserver/grocy:3.3.1
