@@ -1,15 +1,28 @@
-version: "3.4"
+version: '3.1'
 services:
-  neko:
-    image: "m1k1o/neko:firefox"
-    restart: "unless-stopped"
-    shm_size: "2gb"
+  humhub:
+    image: mriedmann/humhub:1.6.2
+    links:
+      - "db:db"
     ports:
-      - "8098:8080"
-      - "52000-52100:52000-52100/udp"
+      - "8080:80"
+    volumes:
+      - "config:/var/www/localhost/htdocs/protected/config"
+      - "uploads:/var/www/localhost/htdocs/uploads"
+      - "modules:/var/www/localhost/htdocs/protected/modules"
     environment:
-      NEKO_SCREEN: 1920x1080@30
-      NEKO_PASSWORD: neko
-      NEKO_PASSWORD_ADMIN: admin
-      NEKO_EPR: 52000-52100
-      NEKO_ICELITE: 1
+      HUMHUB_DB_USER: humhub
+      HUMHUB_DB_PASSWORD: humhub
+
+  db:
+    image: mariadb:10.2
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: humhub
+      MYSQL_USER: humhub
+      MYSQL_PASSWORD: humhub
+
+volumes:
+  config: {}
+  uploads: {}
+  modules: {}
