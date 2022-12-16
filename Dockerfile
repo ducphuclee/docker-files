@@ -1,1 +1,1 @@
-FROM linuxserver/calibre-web
+FROM linuxserver/bookstack
