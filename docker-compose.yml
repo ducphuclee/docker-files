@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   humhub:
-    image: mriedmann/humhub:1.6.2
+    image: mriedmann/humhub
     links:
       - "db:db"
     ports:
