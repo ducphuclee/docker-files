@@ -1,1 +1,1 @@
-FROM tootsuite/mastodon
+FROM vabene1111/recipes
