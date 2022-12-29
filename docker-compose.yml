@@ -1,28 +1,28 @@
-version: '3.1'
+version: "3"
 services:
-  humhub:
-    image: mriedmann/humhub
-    links:
-      - "db:db"
+  gluetun:
+    image: qmcgaw/gluetun
+    # container_name: gluetun
+    # line above must be uncommented to allow external containers to connect. See https://github.com/qdm12/gluetun/wiki/Connect-a-container-to-gluetun#external-container-to-gluetun
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
     ports:
-      - "8080:80"
+      - 8888:8888/tcp # HTTP proxy
+      - 8388:8388/tcp # Shadowsocks
+      - 8388:8388/udp # Shadowsocks
     volumes:
-      - "config:/var/www/localhost/htdocs/protected/config"
-      - "uploads:/var/www/localhost/htdocs/uploads"
-      - "modules:/var/www/localhost/htdocs/protected/modules"
+      - /yourpath:/gluetun
     environment:
-      HUMHUB_DB_USER: humhub
-      HUMHUB_DB_PASSWORD: humhub
-
-  db:
-    image: mariadb:10.2
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: humhub
-      MYSQL_USER: humhub
-      MYSQL_PASSWORD: humhub
-
-volumes:
-  config: {}
-  uploads: {}
-  modules: {}
+      # See https://github.com/qdm12/gluetun/wiki
+      - VPN_SERVICE_PROVIDER=ivpn
+      - VPN_TYPE=openvpn
+      # OpenVPN:
+      - OPENVPN_USER=
+      - OPENVPN_PASSWORD=
+      # Wireguard:
+      # - WIREGUARD_PRIVATE_KEY=wOEI9rqqbDwnN8/Bpp22sVz48T71vJ4fYmFWujulwUU=
+      # - WIREGUARD_ADDRESSES=10.64.222.21/32
+      # Timezone for accurate log times
+      - TZ=
