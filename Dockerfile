@@ -1,1 +1,1 @@
-FROM linuxserver/firefox
+FROM jlesage/firefox
