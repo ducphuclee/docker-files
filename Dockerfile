@@ -1,1 +1,1 @@
-neosmemo/memos
+FROM neosmemo/memos
